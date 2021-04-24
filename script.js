@@ -8,11 +8,11 @@ let slideIndex = 0;
 showSlide(slideIndex);
 
 function showSlide(n) {
-  if (slideIndex > images.length - 1) {
-    slideIndex = 0;
-  }
   if (slideIndex < 0) {
     slideIndex = images.length - 1;
+  }
+  if (slideIndex > images.length - 1) {
+    slideIndex = 0;
   }
 
   let i;
@@ -33,6 +33,7 @@ prev.addEventListener('click', () => {
 next.addEventListener('click', () => {
   showSlide((slideIndex += 1));
 });
+
 dots.forEach((item, index) => {
   item.addEventListener('click', () => {
     showSlide((slideIndex = index));
